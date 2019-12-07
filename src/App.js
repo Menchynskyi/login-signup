@@ -2,8 +2,12 @@ import React from 'react';
 import { Header } from './components/Header';
 import { Home, Login, Signup, Profile } from './pages';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+import { PrivateRoute } from './components/PrivateRoute';
+import { useSelector } from 'react-redux';
 
 export const App = () => {
+  const loggedIn = useSelector(state => state.loggedIn);
+
   return (
     <div className="app">
       <Router>
@@ -22,7 +26,8 @@ export const App = () => {
             path="/signup"
             component={Signup}
           />
-          <Route
+          <PrivateRoute
+            loggedIn={loggedIn}
             path="/profile"
             component={Profile}
           />

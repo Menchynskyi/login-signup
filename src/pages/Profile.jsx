@@ -2,7 +2,6 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
-import { Redirect } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
   homeContainer: {
@@ -21,10 +20,6 @@ const useStyles = makeStyles(theme => ({
 export const Profile = () => {
   const classes = useStyles();
   const currentUser = useSelector(state => state.currentUser);
-
-  if (!currentUser) {
-    return <Redirect to="/" />
-  };
 
   return (
     <div className={classes.homeContainer}>
