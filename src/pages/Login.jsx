@@ -64,6 +64,12 @@ export const Login = () => {
     }
   });
 
+  const disableSpace = (e) => {
+    if (e.which === 32) {
+      e.preventDefault();
+    };
+  };
+
   const onSubmit = (e) => {
     e.preventDefault();
     dispatch(userLoggedIn(email, password));
@@ -93,6 +99,7 @@ export const Login = () => {
       <form 
         className={classes.formContainer}
         onSubmit={onSubmit}
+        onKeyPress={disableSpace}
       > 
         <TextField
           error={invalidEmail}

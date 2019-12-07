@@ -76,6 +76,12 @@ export const Signup = () => {
     return <Redirect to="/" />
   };
   
+  const disableSpace = (e) => {
+    if (e.which === 32) {
+      e.preventDefault();
+    };
+  };
+
   const validateUsername = (value) => {
     value.length > 10 ?
       setUsernameValid(false) :
@@ -103,6 +109,7 @@ export const Signup = () => {
   };
 
   const handlerUsername = (e) => {
+    if (e.target.value === ' ') return
     validateUsername(e.target.value);
     setUsername(e.target.value);
   };
@@ -127,6 +134,7 @@ export const Signup = () => {
         <form 
           className={classes.formContainer}
           onSubmit={onSubmit}
+          onKeyPress={disableSpace}
         > 
         <TextField
           onChange={handlerUsername}
