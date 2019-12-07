@@ -4,9 +4,9 @@ const initialState = {
   users: [
     {
       id: 1,
-      username: 'mngs',
-      email: 'sasha@gmail.com',
-      password: '12345'
+      username: 'test',
+      email: 'test@gmail.com',
+      password: '123456'
     }
   ],
   currentUser: null,
