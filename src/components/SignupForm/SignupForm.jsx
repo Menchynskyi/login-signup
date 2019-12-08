@@ -96,7 +96,7 @@ export const SignupForm = () => {
   };
 
   const handlerUsername = (e) => {
-    if (e.target.value === ' ') return
+    if (e.target.value === ' ') return;
     validateUsername(e.target.value);
     setUsername(e.target.value);
   };
@@ -170,4 +170,4 @@ export const SignupForm = () => {
       </Link>
     </form>
   );
-}
+};

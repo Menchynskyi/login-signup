@@ -11,6 +11,7 @@ import { useDispatch } from 'react-redux';
 import { userLoggedOut } from '../../redux/actionCreators';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -68,7 +69,9 @@ export const UserPopup = ({ username }) => {
         {({ TransitionProps, placement }) => (
           <Grow
             {...TransitionProps}
-            style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
+            style={{ 
+              transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom'
+            }}
           >
             <Paper>
               <ClickAwayListener onClickAway={handleClose}>
@@ -97,4 +100,8 @@ export const UserPopup = ({ username }) => {
       </Popper>
     </div>
   );
+};
+
+UserPopup.propTypes = {
+  username: PropTypes.string
 };

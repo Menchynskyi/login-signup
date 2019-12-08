@@ -3,6 +3,7 @@ import { Paper, Typography, Grow } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import CloseIcon from '@material-ui/icons/Close';
 import { useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -70,4 +71,9 @@ export const Alert = ({ text, closeButton = true }) => {
       </Paper>
     </Grow>
   );
+};
+
+Alert.propTypes = {
+  text: PropTypes.string.isRequired,
+  closeButton: PropTypes.bool
 };

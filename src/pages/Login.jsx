@@ -37,7 +37,7 @@ export const Login = () => {
 
   return (
     <div className={classes.container}>
-      { alertMessage }            
+      {alertMessage}            
       <LoginForm />
     </div>
   );
